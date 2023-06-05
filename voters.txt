@@ -1,0 +1,253 @@
+	Program Code:-
+
+package ajp;
+
+import java.awt.*;
+import java.applet.*;
+import java.awt.event.*;
+
+publicclassVoteextends Applet implements  MouseListener 
+{
+publicintcount1;
+publicintcount2;
+publicintcount3;
+publicintcount4;
+publicintcount5;
+publicintcount6;
+publicintcount7;
+publicintcount8;
+publicButtonvote;
+
+Buttonch1;
+Buttonch2;
+Buttonch3;
+Buttonch4;
+Buttonch5;
+Buttonch6;
+Buttonch7;
+Buttonch8;
+
+TextField ncp;
+TextField bjp;
+TextField inc;
+TextField ss;
+TextField wba;
+TextField manse;
+TextField apk;
+TextField aap;
+
+publicvoid init()
+{
+
+count1 =0;
+count2 =0;
+count3 =0;
+count4 =0;
+count5 =0;
+count6 =0;
+count7 =0;
+count8 =0;
+
+
+this.setBackground(Color.gray);
+
+ setLayout(new BorderLayout());
+ Panel p1 =new Panel();
+p1.setBackground(Color.lightGray);
+p1.setLayout(new GridLayout(8,200,100,45));
+
+ch1 =newButton("Bhartiy Janata Party"+"                                          "+"Candidate Name:   Narendra Modi"); 
+ Font f1 = new Font("Helvetica",Font.BOLD,20);
+ch1.setFont(f1);
+ch1.setBackground(Color.white);
+
+
+ch2 =newButton(" National Congress party"+""+"Candidate Name:   Rahul Gandi");
+ch2.setFont(f1);
+ch2.setBackground(Color.white);
+
+ch3 =newButton("Indian National Congress"+" "+"Candidate Name:   Sharad Pavar");
+ch3.setFont(f1);
+ch3.setBackground(Color.white);
+
+ch4 =newButton("ShivSena"+""+"Candidate Name:   Uddhav Thakare");
+ch4.setFont(f1);
+ch4.setBackground(Color.white);
+
+ch5 =newButton("Wanchit Bahujan Aaghadi"+"Candidate Name: GopichandPadalkar");
+ch5.setFont(f1);
+ch5.setBackground(Color.white);
+
+ch6 =newButton("Maharastra Navbirman Sena"+"Candidate Name:   Raj Thakare");
+ch6.setFont(f1);
+ch6.setBackground(Color.white);
+
+ch7 =newButton("Apaksha"+""+"Candidate Name:   Prakash Shendage");
+ch7.setFont(f1);
+ch7.setBackground(Color.white);
+
+ch8=newButton("Aam Aadmi party"+"                     			  "+"Candidate Name:   Mayawati");
+ch8.setFont(f1);
+ch8.setBackground(Color.white);
+
+
+ncp = new TextField("NCP:  "  + String.valueOf(count1));
+ncp.setEditable(false);
+ncp.setFont(f1);
+
+bjp = new TextField("BJP:  " + String.valueOf(count2));
+bjp.setEditable(false);
+bjp.setFont(f1);
+
+inc = new TextField("INC:  "  + String.valueOf(count3));
+inc.setEditable(false);
+inc.setFont(f1);
+
+ss = new TextField("SS:  " +  String.valueOf(count4));
+ss.setEditable(false);
+ss.setFont(f1);
+
+manse = new TextField("MANSE:  " +  String.valueOf(count5));
+manse.setEditable(false);
+manse.setFont(f1);
+
+
+apk = new TextField("APK:  " + String.valueOf(count6));
+apk.setEditable(false);
+apk.setFont(f1);
+
+aap= new TextField("AAP:  "  + String.valueOf(count7));
+aap.setEditable(false);
+aap.setFont(f1);
+
+wba = new TextField("WBA:  "  + String.valueOf(count8));
+wba.setEditable(false);
+wba.setFont(f1);
+
+p1.add(ch1);
+ch1.addMouseListener (this);
+p1.add(bjp);
+
+p1.add(ch2);
+ch2.addMouseListener (this);
+p1.add(ncp);
+
+p1.add(ch3);
+ch3.addMouseListener (this);
+p1.add(inc);
+
+p1.add(ch4);
+ch4.addMouseListener (this);
+p1.add(ss);
+
+p1.add(ch5);
+ch5.addMouseListener (this);
+p1.add(wba);
+
+p1.add(ch6);
+ch6.addMouseListener (this);
+p1.add(manse);
+
+p1.add(ch7);
+ch7.addMouseListener (this);
+p1.add(apk);
+
+p1.add(ch8);
+ch8.addMouseListener (this);
+p1.add(aap);
+
+
+add("North",p1);
+
+Label l =new Label("Click to choose the Party");
+Font f = new Font("Helvetica",Font.BOLD,120);
+l.setFont(f);
+add("Center",l);
+
+SingleAction sa = new SingleAction();
+vote =newButton("Count Votes");
+Font ff = new Font("Helvetica",Font.BOLD,30);
+vote.setFont(ff);
+vote.addActionListener(sa);
+add("East",vote);
+vote.setBackground(Color.orange);
+		
+}
+
+publicvoid mouseClicked(MouseEvent arg0)
+{
+	if(arg0.getSource()==ch1)
+	{
+	count2=count2+1;
+	}
+	
+	if(arg0.getSource()==ch2)
+	{
+	count1=count1+1;
+	}
+	
+	if(arg0.getSource()==ch3)
+	{
+	count4=count4+1;
+	}
+	
+	if(arg0.getSource()==ch4)
+	{
+	count7=count7+1;
+	}
+	
+	if(arg0.getSource()==ch5)
+	{
+	count5=count5+1;
+	}
+	
+	if(arg0.getSource()==ch6)
+	{
+	count3=count3+1;
+	}
+	
+	if(arg0.getSource()==ch7)
+	{
+	count8=count8+1;
+	}
+	
+	if(arg0.getSource()==ch8)
+	{
+	count6=count6+1;
+	}
+	
+}
+
+
+@Override
+publicvoid mouseEntered(MouseEvent arg0) {}
+
+@Override
+publicvoid mouseExited(MouseEvent arg0) {}
+
+@Override
+publicvoid mousePressed(MouseEvent arg0) {}
+
+@Override
+publicvoid mouseReleased(MouseEvent arg0) {}
+
+
+
+class SingleAction implements ActionListener
+{
+publicvoid actionPerformed(ActionEvent e)
+{
+
+	ncp.setText("NCP:  " + String.valueOf(count1));
+	bjp.setText("BJP:  " + String.valueOf(count2)); 
+	manse.setText("MANSE:  " + String.valueOf(count3));	
+	wba.setText("WBA:  " + String.valueOf(count5)); 
+	inc.setText("INC:  " + String.valueOf(count4)); 
+	aap.setText("AAP:  " + String.valueOf(count6));
+	ss.setText("SS:  " + String.valueOf(count7));
+	apk.setText("APK:  " + String.valueOf(count8)); 
+
+
+}
+}
+}
